@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilocale mansardato a Varazze – The Roof Spot | 600 m dal mare | €240.000</title>
+  <meta name="description" content="Bilocale mansardato ristrutturato a Varazze (Via Simone Canepa, 4), 600 metri dal mare. 45 mq, 1 camera, 1 bagno. Ottimo come seconda casa o investimento per locazioni brevi. Prezzo €240.000." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/varazze-the-roof-spot" />
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bilocale mansardato a Varazze – The Roof Spot" />
+  <meta property="og:description" content="600 m dal mare. 45 mq. Ideale seconda casa o investimento (short lets)." />
+  <meta property="og:image" content="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1320; /* blu notte elegante */
+      --fg:#10141f;
+      --txt:#0b1320;
+      --muted:#6b7280;
+      --brand:#ffcc66; /* accento warm/gold */
+      --card:#ffffff;
+      --chip:#f3f4f6;
+      --ok:#16a34a;
+      --err:#b91c1c;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#111;background:#fafafa}
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header.hero{
+      position:relative;color:white;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_1.jpg');
+      /* Foto principale dell'annuncio da pcase.it */
+      background-size:cover;background-position:center;min-height:72vh;display:flex;align-items:center
+    }
+    .hero .content{max-width:900px;padding:32px}
+    .kicker{display:inline-block;background:rgba(255,204,102,.2);color:#ffd88a;padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.4px}
+    h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;margin:14px 0 12px}
+    .lead{font-size:18px;opacity:.95}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .badge{background:rgba(255,255,255,.14);backdrop-filter:saturate(120%) blur(2px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 12px;border-radius:10px;font-size:14px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{appearance:none;border:none;cursor:pointer;border-radius:12px;padding:14px 18px;font-weight:600}
+    .btn.primary{background:var(--brand);color:#1f2937}
+    .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+
+    /* Highlights */
+    section{padding:56px 0}
+    .grid{display:grid;gap:18px}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.cols-3,.cols-2{grid-template-columns:1fr} h1{font-size:38px}}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 10px 30px rgba(16,20,31,.06)}
+    .card .inner{padding:22px}
+    .h2{font-family:'Playfair Display',serif;font-size:28px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .list{margin:14px 0 0;padding:0;list-style:none}
+    .list li{padding:8px 0;border-bottom:1px dashed #eee}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{background:var(--chip);padding:8px 10px;border-radius:999px;font-size:13px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+    .gallery .tall{grid-row:span 2}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr}}
+
+    /* Form */
+    form{display:grid;gap:12px}
+    label{font-weight:600}
+    input,textarea,select{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;font:inherit}
+    textarea{min-height:120px}
+    .form-row{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:700px){.form-row{grid-template-columns:1fr}}
+    .privacy{font-size:13px;color:#374151}
+
+    /* Footer */
+    footer{background:#0f172a;color:#e5e7eb}
+    footer a{color:#fef3c7}
+    .footer-grid{display:grid;gap:18px;grid-template-columns:2fr 1fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Cookie banner */
+    .cookie-banner{position:fixed;bottom:16px;left:16px;right:16px;background:#111827;color:#e5e7eb;padding:16px;border-radius:12px;display:none;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:50}
+    .cookie-banner.show{display:flex}
+    .cookie-banner button{padding:10px 14px;border-radius:10px;border:1px solid #374151;background:#1f2937;color:#fff}
+    .cookie-banner .cta{background:var(--brand);color:#1f2937;border-color:#c7a641}
+
+    /* Sticky bottom CTA */
+    .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:1px solid #e5e7eb;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:40}
+    .sticky-cta a{display:inline-block;padding:10px 14px;border-radius:10px;background:#111827;color:white;text-decoration:none}
+    .sticky-cta .accent{background:var(--brand);color:#111827}
+
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+  <!-- Structured data (schema.org) for RealEstateListing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "The Roof Spot – Bilocale mansardato",
+    "description": "Bilocale mansardato a Varazze, quarto ed ultimo piano. 45 mq, 1 camera, 1 bagno, 600 m dal mare.",
+    "url": "https://example.com/varazze-the-roof-spot",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Simone Canepa, 4",
+      "addressLocality": "Varazze",
+      "addressRegion": "SV",
+      "postalCode": "17019",
+      "addressCountry": "IT"
+    },
+    "floorSize": {"@type":"QuantitativeValue","value":45,"unitCode":"MTK"},
+    "numberOfRoomsTotal": 2,
+    "numberOfBathroomsTotal": 1,
+    "numberOfBedrooms": 1,
+    "petsAllowed": false,
+    "amenityFeature": [
+      {"@type":"LocationFeatureSpecification","name":"Distanza dal mare","value":"600 m"},
+      {"@type":"LocationFeatureSpecification","name":"Esposizione","value":"sud/ovest/nord"},
+      {"@type":"LocationFeatureSpecification","name":"Piano","value":"4° senza ascensore"}
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": 240000,
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- Google Ads & Analytics placeholders (inserisci i tuoi ID) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'AW-YYYYYYYYY'); // Google Ads
+  </script> -->
+</head>
+<body>
+  <header class="hero">
+    <div class="container content">
+      <span class="kicker">Varazze • 600 m dal mare</span>
+      <h1>Bilocale mansardato tra cielo e mare</h1>
+      <p class="lead">Quarto ed ultimo piano in Via Simone Canepa, 4. 45 mq ben distribuiti con travi a vista, soggiorno open space con cucina, 1 camera matrimoniale, 1 bagno finestrato. Perfetto come <strong>seconda casa</strong> o <strong>investimento</strong> per <em>locazioni brevi</em>.</p>
+      <div class="badges">
+        <span class="badge">€ 240.000</span>
+        <span class="badge">45 mq</span>
+        <span class="badge">1 camera • 1 bagno</span>
+        <span class="badge">Classe E – 172 kWh/m²a</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="tel:+393473357070">Chiama ora: 347 335 7070</a>
+        <a class="btn ghost" href="#contatti">Richiedi info</a>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:13px">Ideale per chi vive in <strong>Lombardia</strong>, <strong>Piemonte</strong>, <strong>Genova</strong> e <strong>Svizzera</strong>.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sezione gallery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="grid cols-2" style="align-items:start">
+          <div>
+            <h2 class="h2">Scopri gli spazi</h2>
+            <p class="muted">Ambientazioni curate, lucernari e travi a vista. Zona giorno ampia con cucina a vista; camera matrimoniale; bagno con vasca e parete doccia; comodo locale tecnico sottotetto. Riscaldamento/raffrescamento con pompa di calore.</p>
+            <div class="chips">
+              <span class="chip">4° piano (no ascensore)</span>
+              <span class="chip">Doppio vetro PVC</span>
+              <span class="chip">Arredato</span>
+              <span class="chip">Esposizione S/O/N</span>
+              <span class="chip">Libero al rogito</span>
+            </div>
+          </div>
+          <div class="card"><div class="inner">
+            <ul class="list" style="margin-top:0">
+              <li><strong>Indirizzo:</strong> Via Simone Canepa, 4 – Varazze</li>
+              <li><strong>Superficie:</strong> 45 mq • locali 2</li>
+              <li><strong>Distanza dal mare:</strong> 600 m</li>
+              <li><strong>Classe energetica:</strong> E – EPgl,nren 172 kWh/m²a</li>
+              <li><strong>Anno stabile:</strong> 1950</li>
+              <li><strong>Esposizione:</strong> sud / ovest / nord</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="gallery" style="margin-top:18px">
+          <!-- TODO: Sostituisci gli URL seguenti con le foto del link originale -->
+          <img class="tall" src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_2.jpg" alt="Zona giorno open space" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_3.jpg" alt="Cucina su misura" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_7.jpg" alt="Camera mansardata" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_10.jpg" alt="Bagno con vasca e doccia" />
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">Le immagini provengono dall’annuncio ufficiale della proprietà.</p>
+      </div>
+    </section>
+
+    <!-- Sezione perchè è ideale per Lombardia, Piemonte, Genova, Svizzera -->
+    <section id="perche">
+      <div class="container">
+        <div class="grid cols-3">
+          <div class="card"><div class="inner">
+            <h3 class="h2">Perfetta come seconda casa</h3>
+            <p class="muted">Raggiungi Varazze in 1–2,5 ore da Lombardia, Piemonte, Genova e dal Canton Ticino. Zona tranquilla ma comoda a servizi e spiagge.</p>
+          </div></div>
+          <div class="card"><div class="inner">
+            <h3 class="h2">Investimento per locazioni brevi</h3>
+            <p class="muted">Taglio bilocale molto richiesto: ideale per coppie o famiglie con bimbo. Stime di redditività disponibili su richiesta.</p>
+          </div></div>
+          <div class="card"><div class="inner">
+            <h3 class="h2">Pronto da vivere</h3>
+            <p class="muted">Interni curati, travi a vista, impianto con pompa di calore caldo/freddo. Subito utilizzabile come casa vacanza.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mappa -->
+    <section id="mappa">
+      <div class="container">
+        <div class="grid cols-2">
+          <div>
+            <h2 class="h2">Dove si trova</h2>
+            <p class="muted">Via Simone Canepa, 4 – a circa 600 metri dal mare. Quartiere tranquillo, comodo a negozi e centro.</p>
+          </div>
+          <div class="card"><div class="inner">
+            <iframe title="Mappa Varazze" style="border:0;width:100%;height:320px;border-radius:8px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20Simone%20Canepa%2C%204%2C%20Varazze&output=embed"></iframe>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti">
+      <div class="container">
+        <div class="grid cols-2">
+          <div>
+            <h2 class="h2">Richiedi informazioni o una visita</h2>
+            <p class="muted">Compila il modulo: ti risponderò in giornata. Preferisci WhatsApp o una chiamata? Clicca sui pulsanti.</p>
+            <div class="chips">
+              <a class="chip" href="tel:+393473357070">Chiama 347 335 7070</a>
+              <a class="chip" href="tel:+390194509025">Ufficio 019 450 9025</a>
+              <a class="chip" href="https://wa.me/393473357070" target="_blank" rel="nofollow noopener">WhatsApp</a>
+            </div>
+          </div>
+          <div class="card"><div class="inner">
+            <form id="lead-form" novalidate>
+              <div class="form-row">
+                <div>
+                  <label for="nome">Nome *</label>
+                  <input id="nome" name="nome" required />
+                </div>
+                <div>
+                  <label for="cognome">Cognome</label>
+                  <input id="cognome" name="cognome" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label for="telefono">Telefono *</n> 
+                  <input id="telefono" name="telefono" type="tel" required />
+                </div>
+                <div>
+                  <label for="email">Email *</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+              </div>
+              <div>
+                <label for="messaggio">Messaggio *</label>
+                <textarea id="messaggio" name="messaggio" required>Vorrei maggiori informazioni su \"The Roof Spot\" a Varazze. Grazie!</textarea>
+              </div>
+              <div>
+                <label class="privacy">
+                  <input type="checkbox" id="consenso" required />
+                  Autorizzo il trattamento dei miei dati personali secondo l'Informativa privacy.
+                </label>
+                <p class="privacy">Titolare: Immobiliare Daniela Cingolani – Finalità: riscontro richieste di contatto; Base giuridica: consenso; Conservazione: 12 mesi; Diritti: accesso, rettifica, cancellazione, limitazione, opposizione; Contatti: <a href="mailto:immobiliarecingolani@gmail.com">immobiliarecingolani@gmail.com</a>.</p>
+                <p class="privacy">Consulta l'<a href="#" id="open-privacy">Informativa completa</a>.</p>
+              </div>
+              <button class="btn primary" type="submit">Invia richiesta</button>
+              <p id="form-ok" class="privacy" style="display:none;color:var(--ok);margin:6px 0 0">Richiesta inviata. Ti contatteremo a breve.</p>
+              <p id="form-err" class="privacy" style="display:none;color:var(--err);margin:6px 0 0">Controlla i campi obbligatori.</p>
+            </form>
+          </div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 class="h2" style="margin-top:0">Appartamento in vendita a Varazze</h3>
+        <p>Via Simone Canepa, 4 – €240.000 – 45 mq – 1 camera – 1 bagno – Classe E (172 kWh/m²a).</p>
+        <p><strong>Immobiliare Daniela Cingolani</strong> – Via Santa Caterina, 32 – 17019 Varazze (SV) – P.IVA 01608710099 – REA SV-161607.</p>
+      </div>
+      <div>
+        <p><a href="#" id="open-privacy-footer">Privacy Policy</a> • <a href="#" id="open-cookies">Preferenze cookie</a></p>
+        <p class="muted">© <span id="year"></span> Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" aria-hidden="false">
+    <a href="tel:+393473357070" class="accent">Chiama 347 335 7070</a>
+    <a href="#contatti">Richiedi info</a>
+  </div>
+
+  <!-- Privacy Modal (informativa completa) -->
+  <dialog id="privacy-modal" style="max-width:860px;width:90%;border:none;border-radius:12px;padding:0">
+    <div class="inner" style="padding:22px">
+      <h3 class="h2" style="margin-top:0">Informativa privacy</h3>
+      <p class="muted">Ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
+      <p><strong>Titolare</strong>: Immobiliare Daniela Cingolani, Via Santa Caterina 32, 17019 Varazze (SV). Email: <a href="mailto:immobiliarecingolani@gmail.com">immobiliarecingolani@gmail.com</a>.</p>
+      <p><strong>Dati trattati</strong>: dati identificativi e di contatto inviati tramite il modulo.</p>
+      <p><strong>Finalità</strong>: rispondere alle richieste e fissare appuntamenti.</p>
+      <p><strong>Basi giuridiche</strong>: consenso dell'interessato (art. 6.1.a GDPR).</p>
+      <p><strong>Conservazione</strong>: fino a 12 mesi dall'ultima comunicazione o secondo obblighi di legge.</p>
+      <p><strong>Diritti</strong>: è possibile esercitare i diritti di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione scrivendo al Titolare.</p>
+      <p><strong>Destinatari</strong>: fornitori di servizi strettamente necessari (es. hosting, email) nominati responsabili.</p>
+      <p><strong>Trasferimenti extra-UE</strong>: non previsti salvo strumenti di comunicazione richiesti dall'utente (es. WhatsApp).</p>
+      <p><strong>Cookie</strong>: vedi sezione preferenze cookie. È possibile modificare il consenso in qualsiasi momento.</p>
+      <p><button class="btn" onclick="document.getElementById('privacy-modal').close()">Chiudi</button></p>
+    </div>
+  </dialog>
+
+  <!-- Cookie banner / CMP semplificata -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
+    <span>Utilizziamo cookie tecnici e, previo consenso, cookie per statistiche e marketing per migliorare l'esperienza e misurare le campagne.</span>
+    <div style="margin-left:auto;display:flex;gap:8px">
+      <button id="cookie-decline" type="button">Rifiuta</button>
+      <button id="cookie-preferences" type="button">Preferenze</button>
+      <button id="cookie-accept" class="cta" type="button">Accetta tutti</button>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <dialog id="cookie-modal" style="max-width:680px;width:90%;border:none;border-radius:12px;padding:0">
+    <div class="inner" style="padding:22px">
+      <h3 class="h2" style="margin-top:0">Preferenze cookie</h3>
+      <form id="cookie-form">
+        <label class="privacy"><input type="checkbox" checked disabled /> Cookie tecnici (necessari)</label>
+        <label class="privacy"><input type="checkbox" id="cookie-analytics" /> Cookie di statistiche (anonimizzate)</label>
+        <label class="privacy"><input type="checkbox" id="cookie-marketing" /> Cookie di marketing</label>
+        <div style="margin-top:12px">
+          <button class="btn" type="button" onclick="document.getElementById('cookie-modal').close()">Chiudi</button>
+          <button class="btn primary" type="submit">Salva preferenze</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // Anno footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Privacy modal openers
+    document.getElementById('open-privacy')?.addEventListener('click', function(e){e.preventDefault(); document.getElementById('privacy-modal').showModal();});
+    document.getElementById('open-privacy-footer')?.addEventListener('click', function(e){e.preventDefault(); document.getElementById('privacy-modal').showModal();});
+
+    // Cookie banner logic (consenso granulare, storage locale)
+    const COOKIE_KEY = 'consensoCookieV1';
+    const banner = document.getElementById('cookie-banner');
+    const prefsModal = document.getElementById('cookie-modal');
+    const saved = localStorage.getItem(COOKIE_KEY);
+    function showBanner(){banner.classList.add('show');}
+    function hideBanner(){banner.classList.remove('show');}
+    if(!saved){ showBanner(); }
+    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics:true, marketing:true, date:Date.now()})); hideBanner(); };
+    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics:false, marketing:false, date:Date.now()})); hideBanner(); };
+    document.getElementById('cookie-preferences').onclick = () => { prefsModal.showModal(); };
+    document.getElementById('open-cookies')?.addEventListener('click', (e)=>{ e.preventDefault(); prefsModal.showModal(); });
+    document.getElementById('cookie-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const analytics = document.getElementById('cookie-analytics').checked;
+      const marketing = document.getElementById('cookie-marketing').checked;
+      localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics, marketing, date:Date.now()}));
+      prefsModal.close(); hideBanner();
+    });
+
+    // Lead form (demo): valida e costruisce email
+    document.getElementById('lead-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome');
+      const tel = document.getElementById('telefono');
+      const email = document.getElementById('email');
+      const msg = document.getElementById('messaggio');
+      const ok = document.getElementById('form-ok');
+      const err = document.getElementById('form-err');
+      const consenso = document.getElementById('consenso');
+      if(!nome.value || !tel.value || !email.validity.valid || !msg.value || !consenso.checked){ err.style.display='block'; ok.style.display='none'; return; }
+      err.style.display='none'; ok.style.display='block';
+      // Integrazione reale: invia verso CRM o email backend
+      const body = encodeURIComponent(`Richiesta info da ${nome.value}\nTelefono: ${tel.value}\nEmail: ${email.value}\n\n${msg.value}`);
+      window.location.href = `mailto:immobiliarecingolani@gmail.com?subject=Richiesta%20\"The%20Roof%20Spot\"&body=${body}`;
+    });
+  </script>
+
+  <!--
+    TODO FOTO:
+    Per rispettare lo stile del link fornito, sostituisci l'immagine della HERO e le 4 immagini della gallery
+    con gli URL delle foto ufficiali dell'annuncio.
+    Esempio: <img src="https://www.immobiliarecingolani.it/path/alla/tua-foto.jpg" alt="..." />
+  -->
+</body>
+</html>
