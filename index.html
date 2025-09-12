@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bilocale mansardato a Varazze – The Roof Spot | 600 m dal mare | €240.000</title>
-  <meta name="description" content="Bilocale mansardato ristrutturato a Varazze (Via Simone Canepa, 4), 600 metri dal mare. 45 mq, 1 camera, 1 bagno. Ottimo come seconda casa o investimento per locazioni brevi. Prezzo €240.000." />
+  <title>Bilocale mansardato a Varazze – The Roof Spot | 600 m dal mare | €228.000</title>
+  <meta name="description" content="Bilocale mansardato ristrutturato a Varazze (Via Simone Canepa, 4), 600 metri dal mare. 45 mq, 1 camera, 1 bagno. Ottimo come seconda casa o investimento per locazioni brevi. Prezzo €228.000." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://example.com/varazze-the-roof-spot" />
   
@@ -133,7 +133,7 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
-      "price": 240000,
+      "price": 228000,
       "availability": "https://schema.org/InStock"
     }
   }
@@ -154,7 +154,7 @@
       <h1>Bilocale mansardato tra cielo e mare</h1>
       <p class="lead">Quarto ed ultimo piano in Via Simone Canepa, 4. 45 mq ben distribuiti con travi a vista, soggiorno open space con cucina, 1 camera matrimoniale, 1 bagno finestrato. Perfetto come <strong>seconda casa</strong> o <strong>investimento</strong> per <em>locazioni brevi</em>.</p>
       <div class="badges">
-        <span class="badge">€ 240.000</span>
+        <span class="badge">€ 228.000</span>
         <span class="badge">45 mq</span>
         <span class="badge">1 camera • 1 bagno</span>
         <span class="badge">Classe E – 172 kWh/m²a</span>
@@ -254,7 +254,14 @@
             </div>
           </div>
           <div class="card"><div class="inner">
-            <form id="lead-form" novalidate>
+            <!-- Il modulo invia i dati via POST al file PHP di contatto. Assicurati di caricare contatto.php sul server PHP -->
+            <!--
+              Modulo di contatto: invia i dati via POST al file contatto.php. Lo script
+              contatto.php deve trovarsi su un server con supporto PHP; GitHub Pages
+              non esegue PHP. Rimuovendo l'attributo novalidate si sfrutta la
+              validazione HTML5 per i campi obbligatori e il formato email.
+            -->
+            <form id="lead-form" action="contatto.php" method="POST">
               <div class="form-row">
                 <div>
                   <label for="nome">Nome *</label>
@@ -281,15 +288,19 @@
               </div>
               <div>
                 <label class="privacy">
-                  <input type="checkbox" id="consenso" required />
+                  <!-- Campo consenso obbligatorio -->
+                  <input type="checkbox" id="consenso" name="consenso_privacy" value="true" required />
                   Autorizzo il trattamento dei miei dati personali secondo l'Informativa privacy.
                 </label>
+                <!-- Honeypot nascosto per filtrare bot. Deve restare vuoto -->
+                <div style="position:absolute; left:-5000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                  <label>Lascia questo campo vuoto</label>
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                </div>
                 <p class="privacy">Titolare: Immobiliare Daniela Cingolani – Finalità: riscontro richieste di contatto; Base giuridica: consenso; Conservazione: 12 mesi; Diritti: accesso, rettifica, cancellazione, limitazione, opposizione; Contatti: <a href="mailto:immobiliarecingolani@gmail.com">immobiliarecingolani@gmail.com</a>.</p>
                 <p class="privacy">Consulta l'<a href="#" id="open-privacy">Informativa completa</a>.</p>
               </div>
               <button class="btn primary" type="submit">Invia richiesta</button>
-              <p id="form-ok" class="privacy" style="display:none;color:var(--ok);margin:6px 0 0">Richiesta inviata. Ti contatteremo a breve.</p>
-              <p id="form-err" class="privacy" style="display:none;color:var(--err);margin:6px 0 0">Controlla i campi obbligatori.</p>
             </form>
           </div></div>
         </div>
@@ -301,7 +312,7 @@
     <div class="container footer-grid">
       <div>
         <h3 class="h2" style="margin-top:0">Appartamento in vendita a Varazze</h3>
-        <p>Via Simone Canepa, 4 – €240.000 – 45 mq – 1 camera – 1 bagno – Classe E (172 kWh/m²a).</p>
+        <p>Via Simone Canepa, 4 – €228.000 – 45 mq – 1 camera – 1 bagno – Classe E (172 kWh/m²a).</p>
         <p><strong>Immobiliare Daniela Cingolani</strong> – Via Santa Caterina, 32 – 17019 Varazze (SV) – P.IVA 01608710099 – REA SV-161607.</p>
       </div>
       <div>
@@ -389,22 +400,8 @@
       prefsModal.close(); hideBanner();
     });
 
-    // Lead form (demo): valida e costruisce email
-    document.getElementById('lead-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const nome = document.getElementById('nome');
-      const tel = document.getElementById('telefono');
-      const email = document.getElementById('email');
-      const msg = document.getElementById('messaggio');
-      const ok = document.getElementById('form-ok');
-      const err = document.getElementById('form-err');
-      const consenso = document.getElementById('consenso');
-      if(!nome.value || !tel.value || !email.validity.valid || !msg.value || !consenso.checked){ err.style.display='block'; ok.style.display='none'; return; }
-      err.style.display='none'; ok.style.display='block';
-      // Integrazione reale: invia verso CRM o email backend
-      const body = encodeURIComponent(`Richiesta info da ${nome.value}\nTelefono: ${tel.value}\nEmail: ${email.value}\n\n${msg.value}`);
-      window.location.href = `mailto:immobiliarecingolani@gmail.com?subject=Richiesta%20\"The%20Roof%20Spot\"&body=${body}`;
-    });
+    // Modulo di contatto rimosso: gli utenti vengono invitati a contattare
+    // tramite telefono o WhatsApp per informazioni e visite.
   </script>
 
   <!--
