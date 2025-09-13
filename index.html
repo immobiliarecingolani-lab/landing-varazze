@@ -26,7 +26,7 @@
       --fg:#10141f;
       --txt:#0b1320;
       --muted:#6b7280;
-      --brand:#ffcc66; /* accento warm/gold */
+      --brand:#ff009d; /* accento fucsia */
       --card:#ffffff;
       --chip:#f3f4f6;
       --ok:#16a34a;
@@ -43,7 +43,8 @@
       background-size:cover;background-position:center;min-height:72vh;display:flex;align-items:center
     }
     .hero .content{max-width:900px;padding:32px}
-    .kicker{display:inline-block;background:rgba(255,204,102,.2);color:#ffd88a;padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.4px}
+    /* Kicker badge adopts a lighter version of the brand colour */
+    .kicker{display:inline-block;background:rgba(255,0,157,.2);color:#ff66b8;padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.4px}
     h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;margin:14px 0 12px}
     .lead{font-size:18px;opacity:.95}
     .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
@@ -93,7 +94,8 @@
     .cookie-banner{position:fixed;bottom:16px;left:16px;right:16px;background:#111827;color:#e5e7eb;padding:16px;border-radius:12px;display:none;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:50}
     .cookie-banner.show{display:flex}
     .cookie-banner button{padding:10px 14px;border-radius:10px;border:1px solid #374151;background:#1f2937;color:#fff}
-    .cookie-banner .cta{background:var(--brand);color:#1f2937;border-color:#c7a641}
+    /* Use a darker border to complement the new fuchsia tone */
+    .cookie-banner .cta{background:var(--brand);color:#1f2937;border-color:#d1007b}
 
     /* Sticky bottom CTA */
     .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:1px solid #e5e7eb;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:40}
@@ -150,6 +152,8 @@
 <body>
   <header class="hero">
     <div class="container content">
+      <!-- Logo: inseriamo il marchio dell'agenzia in alto -->
+      <img src="logo-cingolani-COLOR.svg" alt="Immobiliare Cingolani" style="height:64px;margin-bottom:16px">
       <span class="kicker">Varazze • 600 m dal mare</span>
       <h1>Bilocale mansardato tra cielo e mare</h1>
       <p class="lead">Quarto ed ultimo piano in Via Simone Canepa, 4. 45 mq ben distribuiti con travi a vista, soggiorno open space con cucina, 1 camera matrimoniale, 1 bagno finestrato. Perfetto come <strong>seconda casa</strong> o <strong>investimento</strong> per <em>locazioni brevi</em>.</p>
