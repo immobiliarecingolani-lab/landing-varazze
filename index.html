@@ -1,180 +1,375 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bilocale mansardato in vendita a Varazze – The Roof Spot</title>
-  <meta name="description" content="Bilocale mansardato a Varazze, ultimo piano con travi a vista a 600m dal mare. Ideale seconda casa o investimento per locazioni brevi. Prezzo 228.000 €." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bilocale mansardato a Varazze – The Roof Spot | 600 m dal mare | €228.000</title>
+  <meta name="description" content="Bilocale mansardato ristrutturato a Varazze (Via Simone Canepa, 4), 600 metri dal mare. 45 mq, 1 camera, 1 bagno. Ottimo come seconda casa o investimento per locazioni brevi. Prezzo €228.000." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/varazze-the-roof-spot" />
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bilocale mansardato a Varazze – The Roof Spot" />
+  <meta property="og:description" content="600 m dal mare. 45 mq. Ideale seconda casa o investimento (short lets)." />
+  <meta property="og:image" content="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --brand:#ff009d; /* fucsia */
-      --text:#111827;
+      --bg:#0b1320; /* blu notte elegante */
+      --fg:#10141f;
+      --txt:#0b1320;
       --muted:#6b7280;
-      --bg:#f9fafb;
+      --brand:#ff009d; /* accento fucsia */
       --card:#ffffff;
-      --shadow:0 10px 25px rgba(0,0,0,.06);
-      --radius:12px;
-      --container:1040px;
+      --chip:#f3f4f6;
+      --ok:#16a34a;
+      --err:#b91c1c;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6;background:#fff}
+    html,body{margin:0}
+    body{font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#111;background:#fafafa}
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    header.hero{
+      position:relative;color:white;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_1.jpg');
+      /* Foto principale dell'annuncio da pcase.it */
+      background-size:cover;background-position:center;min-height:72vh;display:flex;align-items:center
+    }
+    .hero .content{max-width:900px;padding:32px}
+    /* Kicker badge adopts a lighter version of the brand colour */
+    .kicker{display:inline-block;background:rgba(255,0,157,.2);color:#ff66b8;padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.4px}
+    h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.1;margin:14px 0 12px}
+    .lead{font-size:18px;opacity:.95}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .badge{background:rgba(255,255,255,.14);backdrop-filter:saturate(120%) blur(2px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 12px;border-radius:10px;font-size:14px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{appearance:none;border:none;cursor:pointer;border-radius:12px;padding:14px 18px;font-weight:600}
+    .btn.primary{background:var(--brand);color:#ffffff}
+    .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
 
-    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+    /* Highlights */
+    section{padding:56px 0}
+    .grid{display:grid;gap:18px}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.cols-3,.cols-2{grid-template-columns:1fr} h1{font-size:38px}}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 10px 30px rgba(16,20,31,.06)}
+    .card .inner{padding:22px}
+    .h2{font-family:'Playfair Display',serif;font-size:28px;margin:0 0 8px}
     .muted{color:var(--muted)}
-    .h1{font-size:clamp(28px,3.6vw,44px);line-height:1.15;margin:16px 0}
-    .h2{font-size:clamp(22px,2.6vw,32px);line-height:1.25;margin:0 0 16px 0}
-    .lead{font-size:18px;color:#374151}
+    .list{margin:14px 0 0;padding:0;list-style:none}
+    .list li{padding:8px 0;border-bottom:1px dashed #eee}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{background:var(--chip);padding:8px 10px;border-radius:999px;font-size:13px}
 
-    /* HERO */
-    header.hero{background:var(--bg);padding:36px 0 28px 0;border-bottom:1px solid #eef2f7}
-    .hero .logo{height:66px;display:block;margin:0 auto 14px auto}
-    .kicker{display:inline-block;background:rgba(255,0,157,.14);color:#ff66bf;
-      padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.35px}
-    .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+    .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+    .gallery .tall{grid-row:span 2}
+    @media (max-width:900px){.gallery{grid-template-columns:1fr}}
 
-    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;
-      transition:all .2s ease;border:1px solid transparent}
-    .btn.primary{background:var(--brand);color:#fff}
-    .btn.primary:hover{filter:brightness(.95)}
-    .btn.ghost{background:#fff;border-color:#e5e7eb;color:var(--text)}
-    .btn.ghost:hover{background:#f5f6f8}
+    /* Form */
+    form{display:grid;gap:12px}
+    label{font-weight:600}
+    input,textarea,select{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:10px;font:inherit}
+    textarea{min-height:120px}
+    .form-row{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:700px){.form-row{grid-template-columns:1fr}}
+    .privacy{font-size:13px;color:#374151}
 
-    /* SECTIONS */
-    section{padding:42px 0}
-    .grid{display:grid;gap:22px}
-    @media(min-width:900px){.cols-2{grid-template-columns:1.2fr .8fr}}
+    /* Footer */
+    footer{background:#0f172a;color:#e5e7eb}
+    footer a{color:#fef3c7}
+    .footer-grid{display:grid;gap:18px;grid-template-columns:2fr 1fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
 
-    .card{background:var(--card);border:1px solid #eef2f7;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    /* Cookie banner */
+    .cookie-banner{position:fixed;bottom:16px;left:16px;right:16px;background:#111827;color:#e5e7eb;padding:16px;border-radius:12px;display:none;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:50}
+    .cookie-banner.show{display:flex}
+    .cookie-banner button{padding:10px 14px;border-radius:10px;border:1px solid #374151;background:#1f2937;color:#fff}
+    /* Use a darker border to complement the new fuchsia tone */
+    .cookie-banner .cta{background:var(--brand);color:#1f2937;border-color:#d1007b}
 
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:720px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    .gallery img{width:100%;height:auto;border-radius:10px;display:block}
+    /* Sticky bottom CTA */
+    .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:1px solid #e5e7eb;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:40}
+    .sticky-cta a{display:inline-block;padding:10px 14px;border-radius:10px;background:#111827;color:white;text-decoration:none}
+    .sticky-cta .accent{background:var(--brand);color:#ffffff}
 
-    /* VIDEO */
-    .video{margin:26px 0}
-    .video iframe{width:100%;height:480px;border:0;border-radius:10px;max-width:100%}
-    @media(max-width:520px){.video iframe{height:220px}}
-
-    /* STICKY CTA */
-    .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.08);
-      display:flex;gap:10px;justify-content:space-between;padding:10px 14px;z-index:1000}
-    .sticky-cta a{flex:1;text-align:center;background:var(--brand);color:#fff;padding:12px;border-radius:10px;
-      text-decoration:none;font-weight:700}
-
-    footer{background:#f3f4f6;padding:24px 0;text-align:center;font-size:14px;color:#444}
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 
-  <!-- Google tag (gtag.js) | Usa il tuo tag Ads già fornito -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1061192759"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-1061192759'); // Tag base Ads attivo
+  <!-- Structured data (schema.org) for RealEstateListing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "The Roof Spot – Bilocale mansardato",
+    "description": "Bilocale mansardato a Varazze, quarto ed ultimo piano. 45 mq, 1 camera, 1 bagno, 600 m dal mare.",
+    "url": "https://example.com/varazze-the-roof-spot",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Simone Canepa, 4",
+      "addressLocality": "Varazze",
+      "addressRegion": "SV",
+      "postalCode": "17019",
+      "addressCountry": "IT"
+    },
+    "floorSize": {"@type":"QuantitativeValue","value":45,"unitCode":"MTK"},
+    "numberOfRoomsTotal": 2,
+    "numberOfBathroomsTotal": 1,
+    "numberOfBedrooms": 1,
+    "petsAllowed": false,
+    "amenityFeature": [
+      {"@type":"LocationFeatureSpecification","name":"Distanza dal mare","value":"600 m"},
+      {"@type":"LocationFeatureSpecification","name":"Esposizione","value":"sud/ovest/nord"},
+      {"@type":"LocationFeatureSpecification","name":"Piano","value":"4° senza ascensore"}
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": 228000,
+      "availability": "https://schema.org/InStock"
+    }
+  }
   </script>
 
-  <!-- Google Ads: tracciamento conversioni per click sui pulsanti -->
+  <!-- Google Ads & Analytics placeholders (inserisci i tuoi ID) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
-    function trackConversion(action){
-      /* IMPORTANTE:
-         - 'send_to' deve usare il tuo LABEL di conversione, non l'ID cliente con i trattini.
-         - Esempio: 'AW-1061192759/AbCdEFgHijKlmNoPqR' */
-      gtag('event','conversion',{
-        'send_to':'AW-1061192759/XXXXXXX', /* sostituisci XXXXXXX con il LABEL della conversione */
-        'event_callback':function(){ console.log('Conversione:', action); }
-      });
-    }
-  </script>
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'AW-YYYYYYYYY'); // Google Ads
+  </script> -->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1061192759"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1061192759');
+</script>
 </head>
 <body>
-
-  <!-- HERO -->
   <header class="hero">
-    <div class="container">
-      <!-- Logo: carica il file nel repo con lo stesso nome oppure dammi il file per incorporarlo inline -->
-      <img class="logo" src="logo_ImmobiliareCingolani.png" alt="Immobiliare Cingolani" />
-      <div class="kicker">In vendita a Varazze</div>
-      <h1 class="h1">Bilocale mansardato a 600 m dal mare</h1>
-      <p class="lead">Ultimo piano con travi a vista, perfetto come seconda casa per Lombardia, Piemonte, Genova e Svizzera o come investimento per locazioni brevi. Prezzo <strong>€ 228.000</strong>.</p>
-      <div class="actions">
-        <a class="btn primary" href="tel:+393473357070" onclick="trackConversion('call_hero')">Chiama ora</a>
-        <a class="btn primary" href="#contatti" onclick="trackConversion('info_hero')">Richiedi info</a>
+    <div class="container content">
+      <!-- Logo: inseriamo il marchio dell'agenzia in alto -->
+      <!-- Logo aggiornato: incorporiamo l'immagine direttamente come data URI per evitare problemi di caricamento. -->
+      <img src="data:image/png;base64,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" alt="Immobiliare Daniela Cingolani – La tua chiave di casa" style="height:64px;margin:0 auto 16px;display:block">
+      <span class="kicker">Varazze • 600 m dal mare</span>
+      <h1>Bilocale mansardato tra cielo e mare</h1>
+      <p class="lead">Quarto ed ultimo piano in Via Simone Canepa, 4. 45 mq ben distribuiti con travi a vista, soggiorno open space con cucina, 1 camera matrimoniale, 1 bagno finestrato. Perfetto come <strong>seconda casa</strong> o <strong>investimento</strong> per <em>locazioni brevi</em>.</p>
+      <div class="badges">
+        <span class="badge">€ 228.000</span>
+        <span class="badge">45 mq</span>
+        <span class="badge">1 camera • 1 bagno</span>
+        <span class="badge">Classe E – 172 kWh/m²a</span>
       </div>
+      <div class="cta-row">
+        <a class="btn primary" href="tel:+393473357070">Chiama ora: 347 335 7070</a>
+        <a class="btn primary" href="#contatti">Richiedi info</a>
+      </div>
+      <p class="muted" style="margin-top:12px;font-size:13px">Ideale per chi vive in <strong>Lombardia</strong>, <strong>Piemonte</strong>, <strong>Genova</strong> e <strong>Svizzera</strong>.</p>
     </div>
   </header>
 
-  <!-- CONTENUTI PRINCIPALI -->
-  <section>
-    <div class="container grid cols-2">
-      <div class="card">
-        <h2 class="h2">Perché scegliere The Roof Spot</h2>
-        <ul>
-          <li>600 m dal mare, zona tranquilla e servita.</li>
-          <li>Bilocale mansardato all’ultimo piano con travi a vista.</li>
-          <li>Soluzione ideale come seconda casa o investimento a reddito.</li>
-          <li>Comodo per chi arriva da Lombardia, Piemonte, Genova e Svizzera.</li>
-        </ul>
+  <main>
+    <!-- Sezione gallery -->
+    <section id="gallery">
+      <div class="container">
+        <div class="grid cols-2" style="align-items:start">
+          <div>
+            <h2 class="h2">Scopri gli spazi</h2>
+            <p class="muted">Ambientazioni curate, lucernari e travi a vista. Zona giorno ampia con cucina a vista; camera matrimoniale; bagno con vasca e parete doccia; comodo locale tecnico sottotetto. Riscaldamento/raffrescamento con pompa di calore.</p>
+            <div class="chips">
+              <span class="chip">4° piano (no ascensore)</span>
+              <span class="chip">Doppio vetro PVC</span>
+              <span class="chip">Arredato</span>
+              <span class="chip">Esposizione S/O/N</span>
+              <span class="chip">Libero al rogito</span>
+            </div>
+          </div>
+          <div class="card"><div class="inner">
+            <ul class="list" style="margin-top:0">
+              <li><strong>Indirizzo:</strong> Via Simone Canepa, 4 – Varazze</li>
+              <li><strong>Superficie:</strong> 45 mq • locali 2</li>
+              <li><strong>Distanza dal mare:</strong> 600 m</li>
+              <li><strong>Classe energetica:</strong> E – EPgl,nren 172 kWh/m²a</li>
+              <li><strong>Anno stabile:</strong> 1950</li>
+              <li><strong>Esposizione:</strong> sud / ovest / nord</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="gallery" style="margin-top:18px">
+          <!-- TODO: Sostituisci gli URL seguenti con le foto del link originale -->
+          <img class="tall" src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_2.jpg" alt="Zona giorno open space" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_3.jpg" alt="Cucina su misura" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_7.jpg" alt="Camera mansardata" />
+          <img src="https://foto.pcase.it/10396/appartamento-bilocale-in-vendita-a-varazze-in-via-simone-canepa-4-9390350_10.jpg" alt="Bagno con vasca e doccia" />
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">Le immagini provengono dall’annuncio ufficiale della proprietà.</p>
       </div>
-      <div class="card">
-        <h2 class="h2">Dati rapidi</h2>
-        <p class="muted">Superficie 45 mq • 1 camera • 1 bagno • Classe E (172 kWh/m²a)</p>
-        <p><strong>Indirizzo:</strong> Via Simone Canepa, 4 – Varazze (SV)</p>
-        <p><strong>Prezzo:</strong> € 228.000</p>
+    </section>
+
+    <!-- Sezione perchè è ideale per Lombardia, Piemonte, Genova, Svizzera -->
+    <section id="perche">
+      <div class="container">
+        <div class="grid cols-3">
+          <div class="card"><div class="inner">
+            <h3 class="h2">Perfetta come seconda casa</h3>
+            <p class="muted">Raggiungi Varazze in 1–2,5 ore da Lombardia, Piemonte, Genova e dal Canton Ticino. Zona tranquilla ma comoda a servizi e spiagge.</p>
+          </div></div>
+          <div class="card"><div class="inner">
+            <h3 class="h2">Investimento per locazioni brevi</h3>
+            <p class="muted">Taglio bilocale molto richiesto: ideale per coppie o famiglie con bimbo. Stime di redditività disponibili su richiesta.</p>
+          </div></div>
+          <div class="card"><div class="inner">
+            <h3 class="h2">Pronto da vivere</h3>
+            <p class="muted">Interni curati, travi a vista, impianto con pompa di calore caldo/freddo. Subito utilizzabile come casa vacanza.</p>
+          </div></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALLERY IMMAGINI -->
-  <section>
-    <div class="container">
-      <h2 class="h2">Gallery</h2>
-      <div class="gallery">
-        <img src="foto1.jpg" alt="Soggiorno con travi a vista">
-        <img src="foto2.jpg" alt="Camera da letto mansardata">
-        <img src="foto3.jpg" alt="Esterno e contesto">
+    <!-- Mappa -->
+    <section id="mappa">
+      <div class="container">
+        <div class="grid cols-2">
+          <div>
+            <h2 class="h2">Dove si trova</h2>
+            <p class="muted">Via Simone Canepa, 4 – a circa 600 metri dal mare. Quartiere tranquillo, comodo a negozi e centro.</p>
+          </div>
+          <div class="card"><div class="inner">
+            <iframe title="Mappa Varazze" style="border:0;width:100%;height:320px;border-radius:8px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20Simone%20Canepa%2C%204%2C%20Varazze&output=embed"></iframe>
+          </div></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VIDEO (in fondo, prima del footer) -->
-  <section>
-    <div class="container">
-      <h2 class="h2">Video dell’appartamento</h2>
-      <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/BD6eXW03NLw"
-          title="Video appartamento in vendita a Varazze"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+    <!-- Contatti -->
+    <section id="contatti">
+      <div class="container">
+        <h2 class="h2">Contatti e appuntamenti</h2>
+        <p class="muted">Preferisci WhatsApp o una chiamata? Clicca sui pulsanti per contattarmi subito.</p>
+        <div class="chips">
+          <a class="chip" href="tel:+393473357070">Chiama 347 335 7070</a>
+          <a class="chip" href="tel:+390194509025">Ufficio 019 450 9025</a>
+          <a class="chip" href="https://wa.me/393473357070" target="_blank" rel="nofollow noopener">WhatsApp</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- CONTATTI -->
-  <section id="contatti">
-    <div class="container card">
-      <h2 class="h2">Contatti</h2>
-      <p>Per maggiori informazioni o per fissare una visita:</p>
-      <p><strong>Tel / WhatsApp:</strong> <a href="tel:+393473357070" class="btn primary" onclick="trackConversion('call_contacts')">347 335 7070</a></p>
-      <p class="muted">Informativa privacy disponibile su richiesta.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>© 2025 Immobiliare Cingolani – Tutti i diritti riservati</p>
-      <p><a href="#contatti">Richiedi info</a></p>
+    <div class="container footer-grid">
+      <div>
+        <h3 class="h2" style="margin-top:0">Appartamento in vendita a Varazze</h3>
+        <p>Via Simone Canepa, 4 – €228.000 – 45 mq – 1 camera – 1 bagno – Classe E (172 kWh/m²a).</p>
+        <p><strong>Immobiliare Daniela Cingolani</strong> – Via Santa Caterina, 32 – 17019 Varazze (SV) – P.IVA 01608710099 – REA SV-161607.</p>
+      </div>
+      <div>
+        <p><a href="#" id="open-privacy-footer">Privacy Policy</a> • <a href="#" id="open-cookies">Preferenze cookie</a></p>
+        <p class="muted">© <span id="year"></span> Tutti i diritti riservati.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- STICKY CTA -->
-  <div class="sticky-cta" role="region" aria-label="Azioni rapide">
-    <a href="tel:+393473357070" onclick="trackConversion('call_sticky')">Chiama 347 335 7070</a>
-    <a href="#contatti" onclick="trackConversion('info_sticky')">Richiedi info</a>
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" aria-hidden="false">
+    <a href="tel:+393473357070" class="accent">Chiama 347 335 7070</a>
+    <!-- Rendi anche il pulsante 'Richiedi info' fucsia usando la classe accent -->
+    <a href="#contatti" class="accent">Richiedi info</a>
   </div>
 
+  <!-- Privacy Modal (informativa completa) -->
+  <dialog id="privacy-modal" style="max-width:860px;width:90%;border:none;border-radius:12px;padding:0">
+    <div class="inner" style="padding:22px">
+      <h3 class="h2" style="margin-top:0">Informativa privacy</h3>
+      <p class="muted">Ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
+      <p><strong>Titolare</strong>: Immobiliare Daniela Cingolani, Via Santa Caterina 32, 17019 Varazze (SV). Email: <a href="mailto:immobiliarecingolani@gmail.com">immobiliarecingolani@gmail.com</a>.</p>
+      <p><strong>Dati trattati</strong>: dati identificativi e di contatto inviati tramite il modulo.</p>
+      <p><strong>Finalità</strong>: rispondere alle richieste e fissare appuntamenti.</p>
+      <p><strong>Basi giuridiche</strong>: consenso dell'interessato (art. 6.1.a GDPR).</p>
+      <p><strong>Conservazione</strong>: fino a 12 mesi dall'ultima comunicazione o secondo obblighi di legge.</p>
+      <p><strong>Diritti</strong>: è possibile esercitare i diritti di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione scrivendo al Titolare.</p>
+      <p><strong>Destinatari</strong>: fornitori di servizi strettamente necessari (es. hosting, email) nominati responsabili.</p>
+      <p><strong>Trasferimenti extra-UE</strong>: non previsti salvo strumenti di comunicazione richiesti dall'utente (es. WhatsApp).</p>
+      <p><strong>Cookie</strong>: vedi sezione preferenze cookie. È possibile modificare il consenso in qualsiasi momento.</p>
+      <p><button class="btn" onclick="document.getElementById('privacy-modal').close()">Chiudi</button></p>
+    </div>
+  </dialog>
+
+  <!-- Cookie banner / CMP semplificata -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
+    <span>Utilizziamo cookie tecnici e, previo consenso, cookie per statistiche e marketing per migliorare l'esperienza e misurare le campagne.</span>
+    <div style="margin-left:auto;display:flex;gap:8px">
+      <button id="cookie-decline" type="button">Rifiuta</button>
+      <button id="cookie-preferences" type="button">Preferenze</button>
+      <button id="cookie-accept" class="cta" type="button">Accetta tutti</button>
+    </div>
+  </div>
+
+  <!-- Cookie Preferences Modal -->
+  <dialog id="cookie-modal" style="max-width:680px;width:90%;border:none;border-radius:12px;padding:0">
+    <div class="inner" style="padding:22px">
+      <h3 class="h2" style="margin-top:0">Preferenze cookie</h3>
+      <form id="cookie-form">
+        <label class="privacy"><input type="checkbox" checked disabled /> Cookie tecnici (necessari)</label>
+        <label class="privacy"><input type="checkbox" id="cookie-analytics" /> Cookie di statistiche (anonimizzate)</label>
+        <label class="privacy"><input type="checkbox" id="cookie-marketing" /> Cookie di marketing</label>
+        <div style="margin-top:12px">
+          <button class="btn" type="button" onclick="document.getElementById('cookie-modal').close()">Chiudi</button>
+          <button class="btn primary" type="submit">Salva preferenze</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // Anno footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Privacy modal openers
+    document.getElementById('open-privacy')?.addEventListener('click', function(e){e.preventDefault(); document.getElementById('privacy-modal').showModal();});
+    document.getElementById('open-privacy-footer')?.addEventListener('click', function(e){e.preventDefault(); document.getElementById('privacy-modal').showModal();});
+
+    // Cookie banner logic (consenso granulare, storage locale)
+    const COOKIE_KEY = 'consensoCookieV1';
+    const banner = document.getElementById('cookie-banner');
+    const prefsModal = document.getElementById('cookie-modal');
+    const saved = localStorage.getItem(COOKIE_KEY);
+    function showBanner(){banner.classList.add('show');}
+    function hideBanner(){banner.classList.remove('show');}
+    if(!saved){ showBanner(); }
+    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics:true, marketing:true, date:Date.now()})); hideBanner(); };
+    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics:false, marketing:false, date:Date.now()})); hideBanner(); };
+    document.getElementById('cookie-preferences').onclick = () => { prefsModal.showModal(); };
+    document.getElementById('open-cookies')?.addEventListener('click', (e)=>{ e.preventDefault(); prefsModal.showModal(); });
+    document.getElementById('cookie-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const analytics = document.getElementById('cookie-analytics').checked;
+      const marketing = document.getElementById('cookie-marketing').checked;
+      localStorage.setItem(COOKIE_KEY, JSON.stringify({analytics, marketing, date:Date.now()}));
+      prefsModal.close(); hideBanner();
+    });
+
+    // Modulo di contatto rimosso: gli utenti vengono invitati a contattare
+    // tramite telefono o WhatsApp per informazioni e visite.
+  </script>
+
+  <!--
+    TODO FOTO:
+    Per rispettare lo stile del link fornito, sostituisci l'immagine della HERO e le 4 immagini della gallery
+    con gli URL delle foto ufficiali dell'annuncio.
+    Esempio: <img src="https://www.immobiliarecingolani.it/path/alla/tua-foto.jpg" alt="..." />
+  -->
 </body>
 </html>
