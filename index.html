@@ -3,135 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appartamento in vendita a Varazze</title>
-  <meta name="description" content="Bilocale mansardato a Varazze, perfetto come seconda casa o investimento per locazioni brevi. Prezzo 228.000 €." />
+  <title>Bilocale mansardato in vendita a Varazze – The Roof Spot</title>
+  <meta name="description" content="Bilocale mansardato a Varazze, ultimo piano con travi a vista a 600m dal mare. Ideale seconda casa o investimento per locazioni brevi. Prezzo 228.000 €." />
+
   <style>
-    :root {
-      --brand:#ff009d; /* colore fucsia */
+    :root{
+      --brand:#ff009d; /* fucsia */
+      --text:#111827;
+      --muted:#6b7280;
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --shadow:0 10px 25px rgba(0,0,0,.06);
+      --radius:12px;
+      --container:1040px;
     }
-    body {font-family:Arial, sans-serif;margin:0;line-height:1.6;color:#333}
-    header.hero {
-      background:#f9fafb;
-      text-align:center;
-      padding:40px 20px;
-    }
-    .hero img {
-      height:64px;
-      margin:0 auto 16px;
-      display:block;
-    }
-    .hero h1 {font-size:28px;margin:20px 0}
-    .kicker {
-      display:inline-block;
-      background:rgba(255,0,157,.2);
-      color:#ff66bf;
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:14px;
-      letter-spacing:.4px
-    }
-    .btn {
-      display:inline-block;
-      padding:12px 24px;
-      border-radius:6px;
-      font-weight:bold;
-      text-decoration:none;
-      transition:.3s;
-      margin:5px;
-    }
-    .btn.primary {background:var(--brand);color:#fff}
-    .btn.primary:hover {opacity:.9}
-    .content {max-width:900px;margin:0 auto;padding:20px}
-    section {padding:40px 20px}
-    .gallery img {width:100%;border-radius:8px;margin-bottom:20px}
-    .video {margin:30px 0;}
-    .video iframe {border-radius:8px;max-width:100%;}
-    .sticky-cta {
-      position:fixed;bottom:0;left:0;right:0;
-      background:#fff;box-shadow:0 -2px 6px rgba(0,0,0,.1);
-      display:flex;justify-content:space-around;align-items:center;
-      padding:10px;z-index:999;
-    }
-    .sticky-cta a {
-      flex:1;margin:5px;
-      text-align:center;
-      padding:12px;
-      border-radius:6px;
-      font-weight:bold;
-      text-decoration:none;
-      background:var(--brand);
-      color:#fff;
-    }
-    footer {background:#f3f4f6;text-align:center;padding:20px;font-size:14px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6;background:#fff}
+
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+    .muted{color:var(--muted)}
+    .h1{font-size:clamp(28px,3.6vw,44px);line-height:1.15;margin:16px 0}
+    .h2{font-size:clamp(22px,2.6vw,32px);line-height:1.25;margin:0 0 16px 0}
+    .lead{font-size:18px;color:#374151}
+
+    /* HERO */
+    header.hero{background:var(--bg);padding:36px 0 28px 0;border-bottom:1px solid #eef2f7}
+    .hero .logo{height:66px;display:block;margin:0 auto 14px auto}
+    .kicker{display:inline-block;background:rgba(255,0,157,.14);color:#ff66bf;
+      padding:6px 12px;border-radius:999px;font-size:14px;letter-spacing:.35px}
+    .actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;
+      transition:all .2s ease;border:1px solid transparent}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.primary:hover{filter:brightness(.95)}
+    .btn.ghost{background:#fff;border-color:#e5e7eb;color:var(--text)}
+    .btn.ghost:hover{background:#f5f6f8}
+
+    /* SECTIONS */
+    section{padding:42px 0}
+    .grid{display:grid;gap:22px}
+    @media(min-width:900px){.cols-2{grid-template-columns:1.2fr .8fr}}
+
+    .card{background:var(--card);border:1px solid #eef2f7;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:720px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery img{width:100%;height:auto;border-radius:10px;display:block}
+
+    /* VIDEO */
+    .video{margin:26px 0}
+    .video iframe{width:100%;height:480px;border:0;border-radius:10px;max-width:100%}
+    @media(max-width:520px){.video iframe{height:220px}}
+
+    /* STICKY CTA */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.08);
+      display:flex;gap:10px;justify-content:space-between;padding:10px 14px;z-index:1000}
+    .sticky-cta a{flex:1;text-align:center;background:var(--brand);color:#fff;padding:12px;border-radius:10px;
+      text-decoration:none;font-weight:700}
+
+    footer{background:#f3f4f6;padding:24px 0;text-align:center;font-size:14px;color:#444}
   </style>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) | Usa il tuo tag Ads già fornito -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1061192759"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-1061192759');
+    gtag('config', 'AW-1061192759'); // Tag base Ads attivo
   </script>
 
-  <!-- Google Ads: tracciamento conversioni -->
+  <!-- Google Ads: tracciamento conversioni per click sui pulsanti -->
   <script>
-    function trackConversion(action) {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-1061192759/XXXXXXX',  // <-- sostituisci XXXXXXX con il tuo ID conversione
-        'event_callback': function() {
-          console.log("Conversione registrata: " + action);
-        }
+    function trackConversion(action){
+      /* IMPORTANTE:
+         - 'send_to' deve usare il tuo LABEL di conversione, non l'ID cliente con i trattini.
+         - Esempio: 'AW-1061192759/AbCdEFgHijKlmNoPqR' */
+      gtag('event','conversion',{
+        'send_to':'AW-1061192759/XXXXXXX', /* sostituisci XXXXXXX con il LABEL della conversione */
+        'event_callback':function(){ console.log('Conversione:', action); }
       });
     }
   </script>
 </head>
 <body>
+
+  <!-- HERO -->
   <header class="hero">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Immobiliare Cingolani" />
-    <div class="kicker">In vendita a Varazze</div>
-    <h1>Bilocale mansardato a 600m dal mare</h1>
-    <a class="btn primary" href="tel:+393473357070" onclick="trackConversion('call')">Chiama ora</a>
-    <a class="btn primary" href="#contatti" onclick="trackConversion('info')">Richiedi info</a>
+    <div class="container">
+      <!-- Logo: carica il file nel repo con lo stesso nome oppure dammi il file per incorporarlo inline -->
+      <img class="logo" src="logo_ImmobiliareCingolani.png" alt="Immobiliare Cingolani" />
+      <div class="kicker">In vendita a Varazze</div>
+      <h1 class="h1">Bilocale mansardato a 600 m dal mare</h1>
+      <p class="lead">Ultimo piano con travi a vista, perfetto come seconda casa per Lombardia, Piemonte, Genova e Svizzera o come investimento per locazioni brevi. Prezzo <strong>€ 228.000</strong>.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:+393473357070" onclick="trackConversion('call_hero')">Chiama ora</a>
+        <a class="btn primary" href="#contatti" onclick="trackConversion('info_hero')">Richiedi info</a>
+      </div>
+    </div>
   </header>
 
-  <section class="content">
-    <h2>Perché scegliere questo appartamento</h2>
-    <p>
-      Luminoso bilocale mansardato all’ultimo piano, con travi a vista e a pochi minuti dal mare.
-      Prezzo: <strong>228.000 €</strong>.
-    </p>
-    <div class="gallery">
-      <img src="foto1.jpg" alt="Soggiorno con travi a vista">
-      <img src="foto2.jpg" alt="Camera da letto mansardata">
-      <img src="foto3.jpg" alt="Vista esterna dell'edificio">
-    </div>
-    <!-- Video incorporato -->
-    <div class="video">
-      <iframe width="100%" height="480" 
-        src="https://www.youtube.com/embed/BD6eXW03NLw" 
-        title="Video appartamento in vendita a Varazze" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+  <!-- CONTENUTI PRINCIPALI -->
+  <section>
+    <div class="container grid cols-2">
+      <div class="card">
+        <h2 class="h2">Perché scegliere The Roof Spot</h2>
+        <ul>
+          <li>600 m dal mare, zona tranquilla e servita.</li>
+          <li>Bilocale mansardato all’ultimo piano con travi a vista.</li>
+          <li>Soluzione ideale come seconda casa o investimento a reddito.</li>
+          <li>Comodo per chi arriva da Lombardia, Piemonte, Genova e Svizzera.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="h2">Dati rapidi</h2>
+        <p class="muted">Superficie 45 mq • 1 camera • 1 bagno • Classe E (172 kWh/m²a)</p>
+        <p><strong>Indirizzo:</strong> Via Simone Canepa, 4 – Varazze (SV)</p>
+        <p><strong>Prezzo:</strong> € 228.000</p>
+      </div>
     </div>
   </section>
 
-  <section id="contatti" class="content">
-    <h2>Contattaci</h2>
-    <p>Per maggiori informazioni chiama o scrivi su WhatsApp:</p>
-    <p><strong>Tel/WhatsApp: 347 335 7070</strong></p>
+  <!-- GALLERY IMMAGINI -->
+  <section>
+    <div class="container">
+      <h2 class="h2">Gallery</h2>
+      <div class="gallery">
+        <img src="foto1.jpg" alt="Soggiorno con travi a vista">
+        <img src="foto2.jpg" alt="Camera da letto mansardata">
+        <img src="foto3.jpg" alt="Esterno e contesto">
+      </div>
+    </div>
   </section>
 
+  <!-- VIDEO (in fondo, prima del footer) -->
+  <section>
+    <div class="container">
+      <h2 class="h2">Video dell’appartamento</h2>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/BD6eXW03NLw"
+          title="Video appartamento in vendita a Varazze"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="container card">
+      <h2 class="h2">Contatti</h2>
+      <p>Per maggiori informazioni o per fissare una visita:</p>
+      <p><strong>Tel / WhatsApp:</strong> <a href="tel:+393473357070" class="btn primary" onclick="trackConversion('call_contacts')">347 335 7070</a></p>
+      <p class="muted">Informativa privacy disponibile su richiesta.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Immobiliare Cingolani – Tutti i diritti riservati</p>
-    <p><a href="#">Privacy Policy</a></p>
+    <div class="container">
+      <p>© 2025 Immobiliare Cingolani – Tutti i diritti riservati</p>
+      <p><a href="#contatti">Richiedi info</a></p>
+    </div>
   </footer>
 
-  <div class="sticky-cta">
-    <a href="tel:+393473357070" onclick="trackConversion('call')">Chiama 347 335 7070</a>
-    <a href="#contatti" onclick="trackConversion('info')">Richiedi info</a>
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" role="region" aria-label="Azioni rapide">
+    <a href="tel:+393473357070" onclick="trackConversion('call_sticky')">Chiama 347 335 7070</a>
+    <a href="#contatti" onclick="trackConversion('info_sticky')">Richiedi info</a>
   </div>
+
 </body>
 </html>
